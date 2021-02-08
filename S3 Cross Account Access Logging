@@ -1,0 +1,7 @@
+Cross account access logging-VDINFRA log ingestion-SUMO
+
+We have a requirement to ingest access logs from 6 S3 buckets across 6 regions into a SIEM tool; for this we use SUMOLOGIC
+
+The total log volume is 300GB+, setup cross account IAM role in that aws account that grants access to read logs from the 6 buckets. 
+
+We ingest logs into Sumo infrequent tier, setup partitions and routing expressions etc
