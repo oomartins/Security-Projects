@@ -5,3 +5,11 @@ We have a requirement to ingest access logs from 6 S3 buckets across 6 regions i
 The total log volume is 300GB+, setup cross account IAM role in that aws account that grants access to read logs from the 6 buckets. 
 
 We ingest logs into Sumo infrequent tier, setup partitions and routing expressions etc
+
+In Sumo, we create 6 AWS S3 sources; one for each s3 access log bucket under one hosted collector and ingest them into Sumologicc infrequent tier, 
+create a partition,set a routing expression and set the variable retention period to 4 years. This approach will be useful especially if there is 
+a need to search data anytime in future(achieved via metadata fields such as Source Category,SourceName)
+
+    HIGH LEVEL ARCHITECTURE DIAGRAM
+    
+    
